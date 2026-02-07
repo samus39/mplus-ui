@@ -1,0 +1,1515 @@
+#!/usr/bin/fontforge
+
+USER_FONTS_DIR = "/home/mx-takashi/.local/share/fonts/";
+
+MPLUS1_REGULAR_FONT = USER_FONTS_DIR + "MPLUS1-Regular.ttf";
+MPLUS1P_REGULAR_FONT = USER_FONTS_DIR + "MPLUS1p-Regular.ttf";
+MPLUSUI_REGULAR_FONT = "MPLUSUI-Regular.ttf";
+
+MPLUS1_BOLD_FONT = USER_FONTS_DIR + "MPLUS1-Bold.ttf";
+MPLUS1P_BOLD_FONT = USER_FONTS_DIR + "MPLUS1p-Bold.ttf";
+MPLUSUI_BOLD_FONT = "MPLUSUI-Bold.ttf";
+
+MPLUS1CODE_REGULAR_FONT = USER_FONTS_DIR + "MPLUS1Code-Regular.ttf";
+MPLUSUICODE_REGULAR_FONT = "MPLUSUICode-Regular.ttf";
+
+MPLUS1CODE_BOLD_FONT = USER_FONTS_DIR + "MPLUS1Code-Bold.ttf";
+MPLUSUICODE_BOLD_FONT = "MPLUSUICode-Bold.ttf";
+
+VLGOTHIC_DIR = "/usr/share/fonts/truetype/vlgothic/";
+VLGOTHIC_FONT = VLGOTHIC_DIR + "VL-Gothic-Regular.ttf";
+VLPGOTHIC_FONT = VLGOTHIC_DIR + "VL-PGothic-Regular.ttf";
+
+//-------------------
+// M PLUS UI Regular
+//-------------------
+MPLUS_BASE_FONT = MPLUS1_REGULAR_FONT;
+MPLUS_OLD_FONT = MPLUS1P_REGULAR_FONT;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUI-Regular", "M PLUS UI", "M PLUS UI Regular", "Regular", "Created by MPLUS and VLGothic", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI");
+SetTTFName(0x409, 2, "Regular");
+SetTTFName(0x409, 3, "MPLUSUI-Regular");
+SetTTFName(0x409, 4, "M PLUS UI Regular");
+
+// U+00B7 MIDDLE DOT
+Select(0x00b7);
+//SetWidth(313);  // width of "."
+//CenterInWidth();
+RemoveAnchorClass("Anchor-2");
+SetGlyphClass("none");
+
+// U+2010 HYPHEN
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+// U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+2236 RATIO
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+//SetWidth(515);  // width of "*"
+//CenterInWidth();
+
+// U+2E40 DOUBLE HYPHEN
+// U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN
+//Select(0xff1d);
+//Copy();
+//Select(0x30a0);
+//Paste();
+//Transform(50, 0, 0, 100, 100, 0);
+//SetWidth(1000);
+//CenterInWidth();
+
+// M PLUS 1p Regular
+MergeFonts(MPLUS_OLD_FONT);
+
+// VL PGothic Regular
+//MergeFonts("/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf");
+
+// Generate
+Generate(MPLUSUI_REGULAR_FONT);
+Close();
+
+//----------------
+// M PLUS UI Bold
+//----------------
+MPLUS_BASE_FONT = MPLUS1_BOLD_FONT;
+MPLUS_OLD_FONT = MPLUS1P_BOLD_FONT;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUI-Bold", "M PLUS UI", "M PLUS UI Bold", "Bold", "Created by MPLUS and VLGothic", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI");
+SetTTFName(0x409, 2, "Bold");
+SetTTFName(0x409, 3, "MPLUSUI-Bold");
+SetTTFName(0x409, 4, "M PLUS UI Bold");
+
+// U+00B7 MIDDLE DOT
+Select(0x00b7);
+//SetWidth(323);
+//CenterInWidth();
+RemoveAnchorClass("Anchor-2");
+SetGlyphClass("none");
+
+// U+2010 HYPHEN
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+// U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+2236 RATIO
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+//SetWidth(527);
+//CenterInWidth();
+
+// U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN
+//Select(0xff1d);
+//Copy();
+//Select(0x30a0);
+//Paste();
+//Transform(50, 0, 0, 100, 100, 0);
+//SetWidth(1000);
+//CenterInWidth();
+
+// M PLUS 1p Regular
+MergeFonts(MPLUS_OLD_FONT);
+
+// Generate
+Generate(MPLUSUI_BOLD_FONT);
+Close();
+
+//------------------------
+// M PLUS UI Code Regular
+//------------------------
+MPLUS_BASE_FONT = MPLUS1CODE_REGULAR_FONT;
+MPLUS_OLD_FONT = MPLUS1P_REGULAR_FONT;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUICode-Regular", "M PLUS UI Code", "M PLUS UI Code Regular", "Regular", "Created by MPLUS and VLGothic", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI Code");
+SetTTFName(0x409, 2, "Regular");
+SetTTFName(0x409, 3, "MPLUSUICode-Regular");
+SetTTFName(0x409, 4, "M PLUS UI Code Regular");
+
+// U+00B7 MIDDLE DOT
+Select(0x00b7);
+RemoveAnchorClass("Anchor-1");
+SetGlyphClass("none");
+
+// U+2010 HYPHEN
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+// U+2014 EM DASH
+//Select(0x2014);
+//Transform(200, 0, 0, 100, 100, 0);
+//SetWidth(1000);
+//CenterInWidth();
+
+// U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+2025 TWO DOT LEADER
+Open(MPLUS_OLD_FONT);
+Select(0x2025);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2025);
+Paste();
+
+// U+2026 HORIZONTAL ELLIPSIS
+//Select(0x002e);
+//Copy();
+//Select(0x2026);
+//Paste();
+//SetWidth(1000);
+//CenterInWidth();
+//Copy();
+//Select(0x2024);
+//Paste();
+//Move(-320, 0);
+//Select(0x2025);
+//Paste();
+//Move(320, 0);
+//Select(0x2024);
+//Copy();
+//Select(0x2026);
+//PasteInto();
+//Select(0x2025);
+//Copy();
+//Select(0x2026);
+//PasteInto();
+//Select(0x2024, 0x2025);
+//Clear();
+
+// U+203B REFERENCE MARK
+Open(MPLUS_OLD_FONT);
+Select(0x203b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x203b);
+Paste();
+Scale(60, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+CenterInWidth();
+
+// U+2103 DEGREE CELSIUS
+Open(MPLUS_OLD_FONT);
+Select(0x2103);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2103);
+Paste();
+
+// U+2190 LEFTWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2190);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2190);
+Paste();
+Scale(65, 100, 0, 400);
+ExpandStroke(20, 0, 0, 0, 1);
+SetWidth(500);
+CenterInWidth();
+
+// U+2191 UPWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2191);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2191);
+Paste();
+SetWidth(500);
+CenterInWidth();
+
+// U+2192 RIGHTWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2192);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2192);
+Paste();
+Scale(65, 100, 0, 400);
+ExpandStroke(20, 0, 0, 0, 1);
+SetWidth(500);
+CenterInWidth();
+
+// U+2193 DOWNWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2193);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2193);
+Paste();
+SetWidth(500);
+CenterInWidth();
+
+// U+21D0 LEFTWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d0);
+Paste();
+
+// U+21D1 UPWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d1);
+Paste();
+
+// U+21D2 RIGHTWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d2);
+Paste();
+
+// U+21D3 DOWNWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d3);
+Paste();
+
+// U+2236 RATIO
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+
+// U+2252 APPROXIMATELY EQUAL TO OR THE IMAGE OF
+Open(MPLUS_OLD_FONT);
+Select(0x2252);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2252);
+Paste();
+
+// U+2266 LESS-THAN OVER EQUAL TO
+Open(MPLUS_OLD_FONT);
+Select(0x2266);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2266);
+Paste();
+
+// U+2267 GREATER-THAN OVER EQUAL TO
+Open(MPLUS_OLD_FONT);
+Select(0x2267);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2267);
+Paste();
+
+// U+25A0 BLACK SQUARE
+Open(MPLUS_OLD_FONT);
+Select(0x25a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a0);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25A1 WHITE SQUARE
+Open(MPLUS_OLD_FONT);
+Select(0x25a1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a1);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25B2 BLACK UP-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25b2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b2);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25B3 WHITE UP-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25b3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b3);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25BC BLACK DOWN-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25bc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bc);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25BD WHITE DOWN-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25bd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bd);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25C6 BLACK DIAMOND
+Open(MPLUS_OLD_FONT);
+Select(0x25c6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c6);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25C7 WHITE DIAMOND
+Open(MPLUS_OLD_FONT);
+Select(0x25c7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c7);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25CB WHITE CIRCLE
+Open(MPLUS_OLD_FONT);
+Select(0x25cb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cb);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25CE BULLSEYE
+Open(MPLUS_OLD_FONT);
+Select(0x25ce);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25ce);
+Paste();
+Scale(60, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+CenterInWidth();
+
+// U+25CF BLACK CIRCLE
+Open(MPLUS_OLD_FONT);
+Select(0x25cf);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cf);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+2605 BLACK STAR
+Open(MPLUS_OLD_FONT);
+Select(0x2605);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2605);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+2606 WHITE STAR
+Open(MPLUS_OLD_FONT);
+Select(0x2606);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2606);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(25, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+266A EIGHTH NOTE
+Open(MPLUS_OLD_FONT);
+Select(0x266a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x266a);
+Paste();
+
+// U+3003 DITTO MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3003);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3003);
+Paste();
+
+// U+300A LEFT DOUBLE ANGLE BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x300a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300a);
+Paste();
+
+// U+300B RIGHT DOUBLE ANGLE BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x300b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300b);
+Paste();
+
+// U+3010 LEFT BLACK LENTICULAR BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3010);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3010);
+Paste();
+
+// U+3011 RIGHT BLACK LENTICULAR BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3011);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3011);
+Paste();
+
+// U+3012 POSTAL MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3012);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3012);
+Paste();
+
+// U+3014 LEFT TORTOISE SHELL BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3014);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3014);
+Paste();
+
+// U+3015 RIGHT TORTOISE SHELL BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3015);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3015);
+Paste();
+
+// U+301C WAVE DASH
+Open(MPLUS1_REGULAR_FONT);
+Select(0x301c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x301c);
+Paste();
+
+// U+3031 VERTICAL KANA REPEAT MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3031);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3031);
+Paste();
+
+// U+3032 VERTICAL KANA REPEAT WITH VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3032);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3032);
+Paste();
+
+// U+3033 VERTICAL KANA REPEAT MARK UPPER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3033);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3033);
+Paste();
+
+// U+3034 VERTICAL KANA REPEAT WITH VOICED SOUND MARK UPPER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3034);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3034);
+Paste();
+
+// U+3035 VERTICAL KANA REPEAT MARK LOWER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3035);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3035);
+Paste();
+
+// U+3095 HIRAGANA LETTER SMALL KA
+Open(MPLUS_OLD_FONT);
+Select(0x3095);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3095);
+Paste();
+
+// U+3096 HIRAGANA LETTER SMALL KE
+Open(MPLUS_OLD_FONT);
+Select(0x3096);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3096);
+Paste();
+
+// U+309B KATAKANA-HIRAGANA VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x309b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309b);
+Paste();
+
+// U+309C KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x309c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309c);
+Paste();
+
+// U+309F HIRAGANA DIGRAPH YORI
+Open(MPLUS_OLD_FONT);
+Select(0x309f);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309f);
+Paste();
+
+// U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN
+Open(MPLUS_OLD_FONT);
+//Select(0x003d);
+Select(0x30a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30a0);
+Paste();
+SetWidth(1000);
+CenterInWidth();
+//Move(0, 10);
+
+// U+30FE KATAKANA VOICED ITERATION MARK
+Open(MPLUS_OLD_FONT);
+Select(0x30fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30fe);
+Paste();
+
+// U+30FF KATAKANA DIGRAPH KOTO
+Open(MPLUS_OLD_FONT);
+Select(0x30ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30ff);
+Paste();
+
+// U+31F0 KATAKANA LETTER SMALL KU
+Open(MPLUS_OLD_FONT);
+Select(0x31f0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f0);
+Paste();
+
+// U+31F1 KATAKANA LETTER SMALL SI
+Open(MPLUS_OLD_FONT);
+Select(0x31f1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f1);
+Paste();
+
+// U+31F2 KATAKANA LETTER SMALL SU
+Open(MPLUS_OLD_FONT);
+Select(0x31f2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f2);
+Paste();
+
+// U+31F3 KATAKANA LETTER SMALL TO
+Open(MPLUS_OLD_FONT);
+Select(0x31f3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f3);
+Paste();
+
+// U+31F4 KATAKANA LETTER SMALL NU
+Open(MPLUS_OLD_FONT);
+Select(0x31f4);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f4);
+Paste();
+
+// U+31F5 KATAKANA LETTER SMALL HA
+Open(MPLUS_OLD_FONT);
+Select(0x31f5);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f5);
+Paste();
+
+// U+31F6 KATAKANA LETTER SMALL HI
+Open(MPLUS_OLD_FONT);
+Select(0x31f6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f6);
+Paste();
+
+// U+31F7 KATAKANA LETTER SMALL HU
+Open(MPLUS_OLD_FONT);
+Select(0x31f7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f7);
+Paste();
+
+// U+31F8 KATAKANA LETTER SMALL HE
+Open(MPLUS_OLD_FONT);
+Select(0x31f8);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f8);
+Paste();
+
+// U+31F9 KATAKANA LETTER SMALL HO
+Open(MPLUS_OLD_FONT);
+Select(0x31f9);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f9);
+Paste();
+
+// U+31FA KATAKANA LETTER SMALL MU
+Open(MPLUS_OLD_FONT);
+Select(0x31fa);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fa);
+Paste();
+
+// U+31FB KATAKANA LETTER SMALL RA
+Open(MPLUS_OLD_FONT);
+Select(0x31fb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fb);
+Paste();
+
+// U+31FC KATAKANA LETTER SMALL RI
+Open(MPLUS_OLD_FONT);
+Select(0x31fc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fc);
+Paste();
+
+// U+31FD KATAKANA LETTER SMALL RU
+Open(MPLUS_OLD_FONT);
+Select(0x31fd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fd);
+Paste();
+
+// U+31FE KATAKANA LETTER SMALL RE
+Open(MPLUS_OLD_FONT);
+Select(0x31fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fe);
+Paste();
+
+// U+31FF KATAKANA LETTER SMALL RO
+Open(MPLUS_OLD_FONT);
+Select(0x31ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31ff);
+Paste();
+
+// U+1B001 HIRAGANA LETTER ARCHAIC YE
+Open(MPLUS_OLD_FONT);
+Select(0x1b001);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x1b001);
+Paste();
+
+// VL Gothic Regular
+//MergeFonts("/usr/share/fonts/truetype/vlgothic/VL-Gothic-Regular.ttf");
+
+// Generate
+Generate(MPLUSUICODE_REGULAR_FONT);
+Close();
+
+//---------------------
+// M PLUS UI Code Bold
+//---------------------
+MPLUS_BASE_FONT = MPLUS1CODE_BOLD_FONT;
+MPLUS_OLD_FONT = MPLUS1P_BOLD_FONT;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUICode-Bold", "M PLUS UI Code", "M PLUS UI Code Bold", "Bold", "Created by MPLUS and VLGothic", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI Code");
+SetTTFName(0x409, 2, "Bold");
+SetTTFName(0x409, 3, "MPLUSUICode-Bold");
+SetTTFName(0x409, 4, "M PLUS UI Code Bold");
+
+// U+00B7 MIDDLE DOT
+Select(0x00b7);
+RemoveAnchorClass("Anchor-1");
+SetGlyphClass("none");
+
+// U+2010 HYPHEN
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+// U+2014 EM DASH
+//Select(0x2014);
+//Transform(200, 0, 0, 100, 100, 0);
+//SetWidth(1000);
+//CenterInWidth();
+
+// U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+// U+2025 TWO DOT LEADER
+Open(MPLUS_OLD_FONT);
+Select(0x2025);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2025);
+Paste();
+
+// U+2026 HORIZONTAL ELLIPSIS
+//Select(0x002e);
+//Copy();
+//Select(0x2026);
+//Paste();
+//SetWidth(1000);
+//CenterInWidth();
+//Copy();
+//Select(0x2024);
+//Paste();
+//Move(-320, 0);
+//Select(0x2025);
+//Paste();
+//Move(320, 0);
+//Select(0x2024);
+//Copy();
+//Select(0x2026);
+//PasteInto();
+//Select(0x2025);
+//Copy();
+//Select(0x2026);
+//PasteInto();
+//Select(0x2024, 0x2025);
+//Clear();
+
+// U+203B REFERENCE MARK
+Open(MPLUS_OLD_FONT);
+Select(0x203b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x203b);
+Paste();
+
+// U+2103 DEGREE CELSIUS
+Open(MPLUS_OLD_FONT);
+Select(0x2103);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2103);
+Paste();
+
+// U+2190 LEFTWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2190);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2190);
+Paste();
+
+// U+2191 UPWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2191);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2191);
+Paste();
+
+// U+2192 RIGHTWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2192);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2192);
+Paste();
+
+// U+2193 DOWNWARDS ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x2193);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2193);
+Paste();
+
+// U+21D0 LEFTWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d0);
+Paste();
+
+// U+21D1 UPWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d1);
+Paste();
+
+// U+21D2 RIGHTWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d2);
+Paste();
+
+// U+21D3 DOWNWARDS DOUBLE ARROW
+Open(MPLUS_OLD_FONT);
+Select(0x21d3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d3);
+Paste();
+
+// U+2236 RATIO
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+
+// U+2252 APPROXIMATELY EQUAL TO OR THE IMAGE OF
+Open(MPLUS_OLD_FONT);
+Select(0x2252);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2252);
+Paste();
+
+// U+2266 LESS-THAN OVER EQUAL TO
+Open(MPLUS_OLD_FONT);
+Select(0x2266);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2266);
+Paste();
+
+// U+2267 GREATER-THAN OVER EQUAL TO
+Open(MPLUS_OLD_FONT);
+Select(0x2267);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2267);
+Paste();
+
+// U+25A0 BLACK SQUARE
+Open(MPLUS_OLD_FONT);
+Select(0x25a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a0);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25A1 WHITE SQUARE
+Open(MPLUS_OLD_FONT);
+Select(0x25a1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a1);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25B2 BLACK UP-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25b2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b2);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25B3 WHITE UP-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25b3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b3);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25BC BLACK DOWN-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25bc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bc);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25BD WHITE DOWN-POINTING TRIANGLE
+Open(MPLUS_OLD_FONT);
+Select(0x25bd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bd);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25C6 BLACK DIAMOND
+Open(MPLUS_OLD_FONT);
+Select(0x25c6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c6);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25C7 WHITE DIAMOND
+Open(MPLUS_OLD_FONT);
+Select(0x25c7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c7);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25CB WHITE CIRCLE
+Open(MPLUS_OLD_FONT);
+Select(0x25cb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cb);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25CE BULLSEYE
+Open(MPLUS_OLD_FONT);
+Select(0x25ce);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25ce);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+25CF BLACK CIRCLE
+Open(MPLUS_OLD_FONT);
+Select(0x25cf);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cf);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+2605 BLACK STAR
+Open(MPLUS_OLD_FONT);
+Select(0x2605);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2605);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+2606 WHITE STAR
+Open(MPLUS_OLD_FONT);
+Select(0x2606);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2606);
+Paste();
+Scale(50, 0, 400);
+ExpandStroke(30, 0, 0, 0, 1);
+SetWidth(500);
+
+// U+266A EIGHTH NOTE
+Open(MPLUS_OLD_FONT);
+Select(0x266a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x266a);
+Paste();
+
+// U+3003 DITTO MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3003);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3003);
+Paste();
+
+// U+300A LEFT DOUBLE ANGLE BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x300a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300a);
+Paste();
+
+// U+300B RIGHT DOUBLE ANGLE BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x300b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300b);
+Paste();
+
+// U+3010 LEFT BLACK LENTICULAR BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3010);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3010);
+Paste();
+
+// U+3011 RIGHT BLACK LENTICULAR BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3011);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3011);
+Paste();
+
+// U+3012 POSTAL MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3012);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3012);
+Paste();
+
+// U+3014 LEFT TORTOISE SHELL BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3014);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3014);
+Paste();
+
+// U+3015 RIGHT TORTOISE SHELL BRACKET
+Open(MPLUS_OLD_FONT);
+Select(0x3015);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3015);
+Paste();
+
+// U+301C WAVE DASH
+Open(MPLUS1_BOLD_FONT);
+Select(0x301c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x301c);
+Paste();
+
+// U+3031 VERTICAL KANA REPEAT MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3031);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3031);
+Paste();
+
+// U+3032 VERTICAL KANA REPEAT WITH VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x3032);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3032);
+Paste();
+
+// U+3033 VERTICAL KANA REPEAT MARK UPPER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3033);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3033);
+Paste();
+
+// U+3034 VERTICAL KANA REPEAT WITH VOICED SOUND MARK UPPER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3034);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3034);
+Paste();
+
+// U+3035 VERTICAL KANA REPEAT MARK LOWER HALF
+Open(MPLUS_OLD_FONT);
+Select(0x3035);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3035);
+Paste();
+
+// U+3095 HIRAGANA LETTER SMALL KA
+Open(MPLUS_OLD_FONT);
+Select(0x3095);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3095);
+Paste();
+
+// U+3096 HIRAGANA LETTER SMALL KE
+Open(MPLUS_OLD_FONT);
+Select(0x3096);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3096);
+Paste();
+
+// U+309B KATAKANA-HIRAGANA VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x309b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309b);
+Paste();
+
+// U+309C KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK
+Open(MPLUS_OLD_FONT);
+Select(0x309c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309c);
+Paste();
+
+// U+309F HIRAGANA DIGRAPH YORI
+Open(MPLUS_OLD_FONT);
+Select(0x309f);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309f);
+Paste();
+
+// U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN
+Open(MPLUS_OLD_FONT);
+//Select(0x003d);
+Select(0x30a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30a0);
+Paste();
+SetWidth(1000);
+CenterInWidth();
+//Move(0, -10);
+
+// U+30FE KATAKANA VOICED ITERATION MARK
+Open(MPLUS_OLD_FONT);
+Select(0x30fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30fe);
+Paste();
+
+// U+30FF KATAKANA DIGRAPH KOTO
+Open(MPLUS_OLD_FONT);
+Select(0x30ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30ff);
+Paste();
+
+// U+31F0 KATAKANA LETTER SMALL KU
+Open(MPLUS_OLD_FONT);
+Select(0x31f0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f0);
+Paste();
+
+// U+31F1 KATAKANA LETTER SMALL SI
+Open(MPLUS_OLD_FONT);
+Select(0x31f1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f1);
+Paste();
+
+// U+31F2 KATAKANA LETTER SMALL SU
+Open(MPLUS_OLD_FONT);
+Select(0x31f2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f2);
+Paste();
+
+// U+31F3 KATAKANA LETTER SMALL TO
+Open(MPLUS_OLD_FONT);
+Select(0x31f3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f3);
+Paste();
+
+// U+31F4 KATAKANA LETTER SMALL NU
+Open(MPLUS_OLD_FONT);
+Select(0x31f4);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f4);
+Paste();
+
+// U+31F5 KATAKANA LETTER SMALL HA
+Open(MPLUS_OLD_FONT);
+Select(0x31f5);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f5);
+Paste();
+
+// U+31F6 KATAKANA LETTER SMALL HI
+Open(MPLUS_OLD_FONT);
+Select(0x31f6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f6);
+Paste();
+
+// U+31F7 KATAKANA LETTER SMALL HU
+Open(MPLUS_OLD_FONT);
+Select(0x31f7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f7);
+Paste();
+
+// U+31F8 KATAKANA LETTER SMALL HE
+Open(MPLUS_OLD_FONT);
+Select(0x31f8);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f8);
+Paste();
+
+// U+31F9 KATAKANA LETTER SMALL HO
+Open(MPLUS_OLD_FONT);
+Select(0x31f9);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f9);
+Paste();
+
+// U+31FA KATAKANA LETTER SMALL MU
+Open(MPLUS_OLD_FONT);
+Select(0x31fa);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fa);
+Paste();
+
+// U+31FB KATAKANA LETTER SMALL RA
+Open(MPLUS_OLD_FONT);
+Select(0x31fb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fb);
+Paste();
+
+// U+31FC KATAKANA LETTER SMALL RI
+Open(MPLUS_OLD_FONT);
+Select(0x31fc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fc);
+Paste();
+
+// U+31FD KATAKANA LETTER SMALL RU
+Open(MPLUS_OLD_FONT);
+Select(0x31fd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fd);
+Paste();
+
+// U+31FE KATAKANA LETTER SMALL RE
+Open(MPLUS_OLD_FONT);
+Select(0x31fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fe);
+Paste();
+
+// U+31FF KATAKANA LETTER SMALL RO
+Open(MPLUS_OLD_FONT);
+Select(0x31ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31ff);
+Paste();
+
+// U+1B001 HIRAGANA LETTER ARCHAIC YE
+Open(MPLUS_OLD_FONT);
+Select(0x1b001);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x1b001);
+Paste();
+
+// Generate
+Generate(MPLUSUICODE_BOLD_FONT);
+Close();
+
+
+// U+00B7 MIDDLE DOT (·)
+// U+2010 HYPHEN (‐)
+// U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK (‛)
+// U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK (‟)
+// U+2236 RATIO (∶)
+// U+25B2 BLACK UP-POINTING TRIANGLE (▲)
+// U+25B3 WHITE UP-POINTING TRIANGLE (△)
+// U+25BC BLACK DOWN-POINTING TRIANGLE (▼)
+// U+25BD WHITE DOWN-POINTING TRIANGLE (▽)
+// U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN (゠)
+// △▲△▲△▲△▲△▲▽▼▽▼▽▼▽▼▽▼
+// ←←→→↓↑→←※◎○●aaa-
