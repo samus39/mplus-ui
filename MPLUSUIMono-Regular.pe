@@ -1,0 +1,695 @@
+#!/usr/bin/fontforge
+
+#------------------------
+# M PLUS UI Mono Regular
+#------------------------
+TARGET_FONT = $1;
+MPLUS_BASE_FONT = $2;
+MPLUS_OLD_FONT = $3;
+MPLUS1_FONT = $4;
+VLGOTHIC_FONT = $5;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUIMono-Regular", "M PLUS UI Mono", "M PLUS UI Mono Regular", "Regular", "M PLUS Based Monospace Font", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI Mono");
+SetTTFName(0x409, 2, "Regular");
+SetTTFName(0x409, 3, "MPLUSUIMono-Regular");
+SetTTFName(0x409, 4, "M PLUS UI Mono Regular");
+
+# U+00B7 MIDDLE DOT (·)
+# - remove anchor
+Select(0x00b7);
+RemoveAnchorClass("Anchor-1");
+SetGlyphClass("none");
+
+# U+2010 HYPHEN (‐)
+# - copy from U+002D HYPHEN-MINUS
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+# U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK (‛)
+# - copy from U+2019 RIGHT SINGLE QUOTATION MARK
+# - horizontal flip
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+# U+2018 LEFT SINGLE QUOTATION MARK (‘)
+# - copy from U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201b);
+Copy();
+Select(0x2018);
+Paste();
+
+# U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK (‟)
+# - copy from U+201D RIGHT DOUBLE QUOTATION MARK
+# - horizontal flip
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+# U+201C LEFT DOUBLE QUOTATION MARK (“)
+# - copy from U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201f);
+Copy();
+Select(0x201c);
+Paste();
+
+# U+2025 TWO DOT LEADER (‥)
+Open(MPLUS_OLD_FONT);
+Select(0x2025);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2025);
+Paste();
+
+# U+203B REFERENCE MARK (※)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x203b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x203b);
+Paste();
+
+# U+2103 DEGREE CELSIUS (℃)
+Open(MPLUS_OLD_FONT);
+Select(0x2103);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2103);
+Paste();
+
+# U+2190 LEFTWARDS ARROW (←)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2190);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2190);
+Paste();
+
+# U+2191 UPWARDS ARROW (↑)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2191);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2191);
+Paste();
+SetWidth(1000);
+CenterInWidth();
+
+# U+2192 RIGHTWARDS ARROW (→)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2192);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2192);
+Paste();
+
+# U+2193 DOWNWARDS ARROW (↓)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2193);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2193);
+Paste();
+SetWidth(1000);
+CenterInWidth();
+
+# U+21D0 LEFTWARDS DOUBLE ARROW (⇐)
+Open(MPLUS_OLD_FONT);
+Select(0x21d0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d0);
+Paste();
+
+# U+21D1 UPWARDS DOUBLE ARROW (⇑)
+Open(MPLUS_OLD_FONT);
+Select(0x21d1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d1);
+Paste();
+
+# U+21D2 RIGHTWARDS DOUBLE ARROW (⇒)
+Open(MPLUS_OLD_FONT);
+Select(0x21d2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d2);
+Paste();
+
+# U+21D3 DOWNWARDS DOUBLE ARROW (⇓)
+Open(MPLUS_OLD_FONT);
+Select(0x21d3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x21d3);
+Paste();
+
+# U+2236 RATIO (∶)
+# - copy from U+003A COLON
+# - move upper
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+
+# U+2252 APPROXIMATELY EQUAL TO OR THE IMAGE OF (≒)
+Open(MPLUS_OLD_FONT);
+Select(0x2252);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2252);
+Paste();
+
+# U+2266 LESS-THAN OVER EQUAL TO (≦)
+Open(MPLUS_OLD_FONT);
+Select(0x2266);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2266);
+Paste();
+
+# U+2267 GREATER-THAN OVER EQUAL TO (≧)
+Open(MPLUS_OLD_FONT);
+Select(0x2267);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2267);
+Paste();
+
+# U+25A0 BLACK SQUARE (■)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a0);
+Paste();
+
+# U+25A1 WHITE SQUARE (□)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25a1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25a1);
+Paste();
+
+# U+25B2 BLACK UP-POINTING TRIANGLE (▲)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25b2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b2);
+Paste();
+
+# U+25B3 WHITE UP-POINTING TRIANGLE (△)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25b3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25b3);
+Paste();
+
+# U+25BC BLACK DOWN-POINTING TRIANGLE (▼)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25bc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bc);
+Paste();
+
+# U+25BD WHITE DOWN-POINTING TRIANGLE (▽)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25bd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25bd);
+Paste();
+
+# U+25C6 BLACK DIAMOND (◆)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25c6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c6);
+Paste();
+
+# U+25C7 WHITE DIAMOND (◇)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25c7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25c7);
+Paste();
+
+# U+25CB WHITE CIRCLE (○)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25cb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cb);
+Paste();
+
+# U+25CE BULLSEYE (◎)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25ce);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25ce);
+Paste();
+
+# U+25CF BLACK CIRCLE (●)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x25cf);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x25cf);
+Paste();
+
+# U+2605 BLACK STAR (★)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2605);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2605);
+Paste();
+
+# U+2606 WHITE STAR (☆)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x2606);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x2606);
+Paste();
+
+# U+266A EIGHTH NOTE (♪)
+Open(MPLUS_OLD_FONT);
+Select(0x266a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x266a);
+Paste();
+
+# U+3003 DITTO MARK (〃)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3003);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3003);
+Paste();
+
+# U+300A LEFT DOUBLE ANGLE BRACKET (《)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x300a);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300a);
+Paste();
+
+# U+300B RIGHT DOUBLE ANGLE BRACKET (》)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x300b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x300b);
+Paste();
+
+# U+3010 LEFT BLACK LENTICULAR BRACKET (【)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3010);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3010);
+Paste();
+
+# U+3011 RIGHT BLACK LENTICULAR BRACKET (】)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3011);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3011);
+Paste();
+
+# U+3012 POSTAL MARK (〒)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3012);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3012);
+Paste();
+
+# U+3014 LEFT TORTOISE SHELL BRACKET (〔)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3014);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3014);
+Paste();
+
+# U+3015 RIGHT TORTOISE SHELL BRACKET (〕)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3015);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3015);
+Paste();
+
+# U+301C WAVE DASH (〜)
+# - copy from M PLUS 1
+Open(MPLUS1_FONT);
+Select(0x301c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x301c);
+Paste();
+
+# U+3031 VERTICAL KANA REPEAT MARK (〱)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3031);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3031);
+Paste();
+
+# U+3032 VERTICAL KANA REPEAT WITH VOICED SOUND MARK (〲)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3032);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3032);
+Paste();
+
+# U+3033 VERTICAL KANA REPEAT MARK UPPER HALF (〳)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3033);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3033);
+Paste();
+
+# U+3034 VERTICAL KANA REPEAT WITH VOICED SOUND MARK UPPER HALF (〴)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3034);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3034);
+Paste();
+
+# U+3035 VERTICAL KANA REPEAT MARK LOWER HALF (〵)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3035);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3035);
+Paste();
+
+# U+3095 HIRAGANA LETTER SMALL KA (ゕ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3095);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3095);
+Paste();
+
+# U+3096 HIRAGANA LETTER SMALL KE (ゖ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x3096);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x3096);
+Paste();
+
+# U+309B KATAKANA-HIRAGANA VOICED SOUND MARK (゛)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x309b);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309b);
+Paste();
+
+# U+309C KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK (゜)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x309c);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309c);
+Paste();
+
+# U+309F HIRAGANA DIGRAPH YORI (ゟ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x309f);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x309f);
+Paste();
+
+# U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN (゠)
+# - copy from M PLUS 1p
+# - full width
+Open(MPLUS_OLD_FONT);
+Select(0x30a0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30a0);
+Paste();
+SetWidth(1000);
+CenterInWidth();
+
+# U+30FE KATAKANA VOICED ITERATION MARK (ヾ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x30fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30fe);
+Paste();
+
+# U+30FF KATAKANA DIGRAPH KOTO (ヿ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x30ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x30ff);
+Paste();
+
+# U+31F0 KATAKANA LETTER SMALL KU (ㇰ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f0);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f0);
+Paste();
+
+# U+31F1 KATAKANA LETTER SMALL SI (ㇱ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f1);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f1);
+Paste();
+
+# U+31F2 KATAKANA LETTER SMALL SU (ㇲ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f2);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f2);
+Paste();
+
+# U+31F3 KATAKANA LETTER SMALL TO (ㇳ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f3);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f3);
+Paste();
+
+# U+31F4 KATAKANA LETTER SMALL NU (ㇴ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f4);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f4);
+Paste();
+
+# U+31F5 KATAKANA LETTER SMALL HA (ㇵ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f5);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f5);
+Paste();
+
+# U+31F6 KATAKANA LETTER SMALL HI (ㇶ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f6);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f6);
+Paste();
+
+# U+31F7 KATAKANA LETTER SMALL HU (ㇷ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f7);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f7);
+Paste();
+
+# U+31F8 KATAKANA LETTER SMALL HE (ㇸ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f8);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f8);
+Paste();
+
+# U+31F9 KATAKANA LETTER SMALL HO (ㇹ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31f9);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31f9);
+Paste();
+
+# U+31FA KATAKANA LETTER SMALL MU (ㇺ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31fa);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fa);
+Paste();
+
+# U+31FB KATAKANA LETTER SMALL RA (ㇻ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31fb);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fb);
+Paste();
+
+# U+31FC KATAKANA LETTER SMALL RI (ㇼ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31fc);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fc);
+Paste();
+
+# U+31FD KATAKANA LETTER SMALL RU (ㇽ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31fd);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fd);
+Paste();
+
+# U+31FE KATAKANA LETTER SMALL RE (ㇾ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31fe);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31fe);
+Paste();
+
+# U+31FF KATAKANA LETTER SMALL RO (ㇿ)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x31ff);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x31ff);
+Paste();
+
+# U+1B001 HIRAGANA LETTER ARCHAIC YE (𛀁)
+# - copy from M PLUS 1p
+Open(MPLUS_OLD_FONT);
+Select(0x1b001);
+Copy();
+Open(MPLUS_BASE_FONT);
+Select(0x1b001);
+Paste();
+
+# Generate
+Generate(TARGET_FONT);
+Close();

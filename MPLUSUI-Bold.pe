@@ -1,0 +1,84 @@
+#!/usr/bin/fontforge
+
+#----------------
+# M PLUS UI Bold
+#----------------
+TARGET_FONT = $1;
+MPLUS_BASE_FONT = $2;
+MPLUS_OLD_FONT = $3;
+
+Open(MPLUS_BASE_FONT);
+SetFontNames("MPLUSUI-Bold", "M PLUS UI", "M PLUS UI Bold", "Bold", "M PLUS Based UI Font", "1.0.0");
+SetTTFName(0x409, 1, "M PLUS UI");
+SetTTFName(0x409, 2, "Bold");
+SetTTFName(0x409, 3, "MPLUSUI-Bold");
+SetTTFName(0x409, 4, "M PLUS UI Bold");
+
+# Merge from M PLUS 1p Bold
+MergeFonts(MPLUS_OLD_FONT);
+
+# U+00B7 MIDDLE DOT (·)
+# - remove anchor
+Select(0x00b7);
+RemoveAnchorClass("Anchor-2");
+SetGlyphClass("none");
+
+# U+2010 HYPHEN (‐)
+# - copy from U+002D HYPHEN-MINUS
+Select(0x002d);
+Copy();
+Select(0x2010);
+Paste();
+
+# U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK (‛)
+# - copy from U+2019 RIGHT SINGLE QUOTATION MARK
+# - horizontal flip
+Select(0x2019);
+Copy();
+Select(0x201b);
+Paste();
+HFlip();
+CorrectDirection();
+
+# U+2018 LEFT SINGLE QUOTATION MARK (‘)
+# - copy from U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201b);
+Copy();
+Select(0x2018);
+Paste();
+
+# U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK (‟)
+# - copy from U+201D RIGHT DOUBLE QUOTATION MARK
+# - horizontal flip
+Select(0x201d);
+Copy();
+Select(0x201f);
+Paste();
+HFlip();
+CorrectDirection();
+
+# U+201C LEFT DOUBLE QUOTATION MARK (“)
+# - copy from U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+Select(0x201f);
+Copy();
+Select(0x201c);
+Paste();
+
+# U+2236 RATIO (∶)
+# - copy from U+003A COLON
+# - move upper
+Select(0x003a);
+Copy();
+Select(0x2236);
+Paste();
+Move(0, 90);
+
+# U+30A0 KATAKANA-HIRAGANA DOUBLE HYPHEN (゠)
+# - full width
+Select(0x30a0);
+SetWidth(1000);
+CenterInWidth();
+
+# Generate
+Generate(TARGET_FONT);
+Close();
